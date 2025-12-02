@@ -1,1 +1,1 @@
-print("Salut^^ihjih_")
+print("camavinga")
