@@ -1,1 +1,1 @@
-print("Salut")
+print("Salut^^ihjih_")
