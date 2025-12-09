@@ -55,5 +55,30 @@ def demander_nombre(message, min_val=None, max_val=None):
     return nombre
 
 def demander_choix(message, options):
+    print(message)
+    numero = 1
+    for opt in options:
+        print(f"{numero}. {opt}")
+        numero += 1
+
+    total_options = len(options)
+    choix_valide = False
+
+    while not choix_valide:
+        choix = demander_nombre("Votre choix : ", 1, total_options)
+        choix_valide = True
+
+    return options[choix-1]
+
+import json
+
+def load_fichier(chemin_fichier):
+    with open(chemin_fichier, "r", encoding="utf-8") as f:
+        donnees = json.load(f)
+    return donnees
+
+
+
+
 
 
