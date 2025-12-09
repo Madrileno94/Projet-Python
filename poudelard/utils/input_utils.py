@@ -7,19 +7,14 @@ def demander_texte(message):
             print("Veuillez entrer un texte non vide.")
 
 def demander_nombre(message, min_val=None, max_val=None):
-
     valide = False
-
     while not valide:
         saisie = input(message).strip()
         valide = True
-
-
         if saisie == "":
             print("Veuillez entrer un nombre entier valide.")
             valide = False
         else:
-
             negatif = False
             start = 0
 
@@ -27,11 +22,9 @@ def demander_nombre(message, min_val=None, max_val=None):
                 negatif = True
                 start = 1
 
-
                 if len(saisie) == 1:
                     print("Veuillez entrer un nombre entier valide.")
                     valide = False
-
 
             if valide:
                 for c in saisie[start:]:
