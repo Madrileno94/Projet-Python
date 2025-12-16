@@ -44,4 +44,13 @@ def recevoir_lettre():
     if choix ==2:
         print("Vous déchirez la lettre, l’oncle Vernon pousse un cri de joie: EXCELLENT  Enfin quelqu’un de NORMAL dans cette maison Le monde magique ne saura jamais que vous existiez... Fin du jeu.")
         exit()
-recevoir_lettre()
+
+from input_utils import demander_choix
+def rencontrer_hagrid(personnage):
+    prenom = personnage["Prenom"]
+    print(f"\nHagrid : 'Salut {prenom} ! Je suis venu t'aider à faire tes achats sur le Chemin de Traverse.'")
+    choix = demander_choix("Voulez-vous suivre Hagrid ?", ["Oui", "Non"])
+    if choix == "Non":
+        print("\nHagrid insiste gentiment et vous entraîne quand même avec lui !")
+    else:
+        print("\nVous suivez Hagrid avec enthousiasme vers l'arrière-cour.")
