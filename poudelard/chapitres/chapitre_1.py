@@ -32,3 +32,16 @@ def creer_personnage():
     afficher_personnage(joueur)
 
     return joueur
+
+
+def recevoir_lettre():
+    print("bonjour cher sorcier, vous avez été accepté a poudelard, fellicitation !")
+    print("souhaiter vous accepter cette invitation a poudelard ")
+
+    choix=demander_nombre("taper 1 pour oui et 2 pour non",1,2)
+    if choix ==1:
+        print("oui bien sur")
+    if choix ==2:
+        print("Vous déchirez la lettre, l’oncle Vernon pousse un cri de joie: EXCELLENT  Enfin quelqu’un de NORMAL dans cette maison Le monde magique ne saura jamais que vous existiez... Fin du jeu.")
+        exit()
+recevoir_lettre()
