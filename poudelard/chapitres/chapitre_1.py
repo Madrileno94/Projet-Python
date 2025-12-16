@@ -1,6 +1,6 @@
 from poudelard.univers.personnage import initialiser_personnage, afficher_personnage
-from poudelard.utils.input_utils import demander_texte, demander_nombre
-from input_utils import demander_choix
+from poudelard.utils.input_utils import demander_texte, demander_nombre, load_fichier, demander_choix
+
 
 def introduction():
     print("Bienvenue à Poudlard !")
@@ -53,3 +53,19 @@ def rencontrer_hagrid(personnage):
         print("\nHagrid insiste gentiment et vous entraîne quand même avec lui !")
     else:
         print("\nVous suivez Hagrid avec enthousiasme vers l'arrière-cour.")
+
+
+def acheter_forunitures(personnage):
+    boutique = load_fichier("data/inventaire.json")
+    objets_obligatoires = ["Baguette magique", "Robe de sorcier", "Manuel de potions"]
+
+    while len(objets_obligatoires) > 0:
+        print("\nCatalogue des objets disponibles :")
+        for i in range(len(boutique)):
+            article = boutique[i]
+            print(f"{i + 1}. {article['nom']} - {article['prix']} gallions")
+        print(f"\nVous avez {personnage['Argent']} gallions.")
+
+        print(f"Objets obligatoires restants à acheter : {', '.join(objets_obligatoires)}")
+
+        choix = demander_nombre("Entrez le numéro de l'objet à acheter : ", 1, len(boutique))
