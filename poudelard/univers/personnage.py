@@ -37,3 +37,5 @@ def ajouter_objet(joueur, cle, objet):
 
 
 
+
+

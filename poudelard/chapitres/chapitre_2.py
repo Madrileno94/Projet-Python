@@ -10,10 +10,10 @@ def rencontrer_amis(joueur):
     print("direction du Nord...")
     print()
 
-    # Raccourci vers les attributs
+
     attributs = joueur["attributs"]
 
-    # --- Rencontre avec Ron ---
+
     print("Un garçon roux entre dans votre compartiment, l’air amical.")
     print("— Salut ! Moi c’est Ron Weasley. Tu veux bien qu’on s’assoie")
     print("ensemble ?")
@@ -31,7 +31,7 @@ def rencontrer_amis(joueur):
 
     print()
 
-    # --- Rencontre avec Hermione ---
+
     print("Une fille entre ensuite, portant déjà une pile de livres.")
     print("— Bonjour, je m’appelle Hermione Granger. Vous avez déjà lu ‘Histoire")
     print("de la Magie’ ?")
@@ -50,7 +50,7 @@ def rencontrer_amis(joueur):
 
     print()
 
-    # --- Rencontre avec Drago ---
+
     print("Puis un garçon blond entre avec un air arrogant.")
     print("— Je suis Drago Malefoy. Mieux vaut bien choisir ses amis dès le")
     print("départ, tu ne crois pas ?")
@@ -120,7 +120,7 @@ def ceremonie_repartition(joueur):
 
     maison = repartition_maison(joueur, questions)
 
-    # Mise à jour du champ "Maison" du joueur
+
     joueur["Maison"] = maison
 
     print(f"Le Choixpeau s’exclame : {maison} !!!")
@@ -128,12 +128,11 @@ def ceremonie_repartition(joueur):
 
 
 def installation_salle_commune(joueur):
-    # Charger les informations des maisons
+
     maisons = load_fichier("../data/maisons.json")
 
     maison_joueur = joueur["Maison"]
 
-    # Sécurité : vérifier que la maison existe dans le JSON
     if maison_joueur not in maisons:
         print("Erreur : maison inconnue.")
         return
@@ -143,21 +142,21 @@ def installation_salle_commune(joueur):
     print("Vous suivez les préfets à travers les couloirs du château...")
     print()
 
-    # Emoji + description
+
     print(f"{infos['emoji']} {infos['description']}")
     print()
 
-    # Message d'accueil
+
     print(infos["message_installation"])
     print()
 
-    # Couleurs
+
     couleurs = ", ".join(infos["couleurs"])
     print(f"Les couleurs de votre maison : {couleurs}")
 
     print()
 
-    # Bonus d'attributs (si présents)
+
     bonus = infos.get("bonus_attributs", {})
     attributs = joueur["attributs"]
 
@@ -165,28 +164,28 @@ def installation_salle_commune(joueur):
         if cle in attributs:
             attributs[cle] = attributs[cle] + bonus[cle]
 
-    # Affichage des attributs après bonus
+
     print("Vos attributs après installation dans la maison :")
     print(attributs)
 
 
 def lancer_chapitre_2(personnage):
-    # 1) Rencontre avec Ron, Hermione et Drago
+
     rencontrer_amis(personnage)
 
-    # 2) Message de bienvenue de Dumbledore
+
     mot_de_bienvenue()
 
-    # 3) Cérémonie de répartition
+
     ceremonie_repartition(personnage)
 
-    # 4) Installation dans la salle commune
+
     installation_salle_commune(personnage)
 
-    # 5) Affichage du personnage (résumé de fin de chapitre)
+
     afficher_personnage(personnage)
 
-    # 6) Fin du chapitre
+
     print("Fin du Chapitre 2 ! Les cours commencent à Poudlard...")
 
 
