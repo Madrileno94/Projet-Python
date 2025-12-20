@@ -71,3 +71,5 @@ def quiz_magie(joueur, chemin_fichier="data/quiz_magie.json"):
 
 
 
+
+
