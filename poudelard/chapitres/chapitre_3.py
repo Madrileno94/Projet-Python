@@ -1,20 +1,23 @@
 import random
 from utils.input_utils import load_fichier
 
-
 def apprendre_sorts(joueur, chemin_fichier="data/sorts.json"):
     print("Tu commences tes cours de magie à Poudlard...\n")
-
     tous_les_sorts = load_fichier(chemin_fichier)
 
-    off = [s for s in tous_les_sorts if s["type"].lower() == "offensif"]
-    defen = [s for s in tous_les_sorts if s["type"].lower() == "défensif"]
-    util = [s for s in tous_les_sorts if s["type"].lower() == "utilitaire"]
+    s_off = [s for s in tous_les_sorts if s["type"].lower() == "offensif"]
+    s_def = [s for s in tous_les_sorts if s["type"].lower() == "défensif"]
+    s_uti = [s for s in tous_les_sorts if s["type"].lower() == "utilitaire"]
 
     choisis = []
-    choisis.extend(random.sample(off, 1))
-    choisis.extend(random.sample(defen, 1))
-    choisis.extend(random.sample(util, 3))
+
+    choisis.append(random.choice(s_off))
+    choisis.append(random.choice(s_def))
+
+    while len(choisis) < 5:
+        sort_pioche = random.choice(s_uti)
+        if sort_pioche not in choisis:
+            choisis.append(sort_pioche)
 
     if "Sortilèges" not in joueur:
         joueur["Sortilèges"] = []
