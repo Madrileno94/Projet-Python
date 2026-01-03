@@ -162,7 +162,7 @@ def match_quidditch(joueur, maisons):
 
     if nom_vainqueur == joueur["Maison"]:
         joueur["Score"] = joueur["Score"] + points_totaux
-        actualiser_points_maison(joueur, maisons)
+        actualiser_points_maison(joueur, maisons,points_totaux)
 
     if nom_vainqueur in maisons:
         if type(maisons[nom_vainqueur]) == int:

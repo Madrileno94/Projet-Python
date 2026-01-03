@@ -8,7 +8,7 @@ from chapitres.chapitre_5_extension import lancer_chapitre_5_basilic
 
 
 def afficher_menu_principal():
-    print("\n1. Lancer l'aventure Poudlard (Chapitres 3, 4 et 5)")
+    print("\n1. Lancer l'aventure Poudlard (Chapitres 1, 2, 3, 4 et 5)")
     print("2. Quitter le jeu.")
 
 
