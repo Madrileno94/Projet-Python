@@ -31,7 +31,7 @@ def lancer_choix_menu():
             }
 
 
-            lancer_chapter_3(personnage, maisons)
+            lancer_chapitre_3(personnage, maisons)
             lancer_chapitre4_quidditch(personnage, maisons)
             lancer_chapitre_5_basilic(personnage, maisons)
 
