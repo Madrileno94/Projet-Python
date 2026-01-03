@@ -156,3 +156,4 @@ def lancer_chapitre4_quidditch(joueur, maisons):
 
     afficher_maison_gagnante(maisons)
     afficher_personnage(joueur)
+

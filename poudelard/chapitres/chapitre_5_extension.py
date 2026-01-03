@@ -34,3 +34,4 @@ def lancer_chapitre_5_basilic(joueur, maisons):
     print("\n--- CLASSEMENT FINAL ---")
     afficher_maison_gagnante(maisons)
     afficher_personnage(joueur)
+
