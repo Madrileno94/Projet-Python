@@ -41,7 +41,6 @@ def afficher_maison_gagnante(maisons):
     for nom_maison in maisons:
         valeur = maisons[nom_maison]
 
-        # valeur peut être un int ou un dict
         if isinstance(valeur, dict):
             if "points" in valeur:
                 score = valeur["points"]
